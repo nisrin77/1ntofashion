@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<html>
+ <head>
+   <title>About </title>  
+<style>
+    .ul{
+        display: inline;
+    }
+    .social-link {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  border-radius: 50%;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background: #ddd;
+  text-decoration: none;
+  color: #555;
+}
+</style>
+ </head>
+<body>
+    <div class="bg-light">
+        <div class="container py-5">
+          <div class="row h-100 align-items-center py-5">
+            <div class="col-lg-6">
+              <h1 class="display-4">Thank you for reatching us </h1>
+              <p class="lead text-muted mb-0">We are thrield to hear from you </p>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block"><img src="{% static 'pages\imgs\Dua-Lipa-96-e1536096807886.jpg' %}" alt="" class="img-fluid"></div>
+          </div>
+        </div>
+      </div>
+      </body>
+      </html>
+{% endblock %}

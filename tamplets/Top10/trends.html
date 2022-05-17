@@ -1,0 +1,61 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<html>
+    <head>
+        <title>Top 10</title>
+        <style>
+table{margin: auto;
+margin-bottom: 20px;
+}
+th, td {
+            padding: 15px;
+        }
+        th{
+            font-family:"Courier New", monospace;
+            font-size: 25px;
+            color: rgb(253, 105, 52);
+            font-weight: bold;
+        }
+        td{
+            border-bottom: 2px solid purple;
+            display: block;
+            float: right;
+            font-family:"Courier New", monospace;
+            color:rgb(246, 38, 142);
+            font-size: 23px;
+        }
+        .img{
+            float:left;
+            width:200px;
+            height:250px;
+            padding-right:20px;
+        }
+        h1{
+            color: coral;
+            font-family: Lucida Handwriting, Helvetica, sans-serif;
+            text-align: center;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Top trends for spring/summer 2022 </h1>
+ {% for x in post.all %}
+    <table >
+            <tr>
+                <th> {{x.head}}</th>
+                <th> </th>
+            </tr>
+            <tr>
+                <td><img src="{{x.img.url}}" class="img"/>
+                    {{x.text}} <br/>
+                    <a href="{{x.url}}">More...</a>
+                </td>  
+                
+            </tr>
+        </table>
+        
+ {% endfor %}
+    </body>
+</html>
+{% endblock %}

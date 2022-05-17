@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content%}
+<html>
+    <head>
+        <title> RUNWAY </title>
+ <style>
+     img{
+    white-space: nowrap;
+}
+ </style>>
+    </head>
+    <body>
+        <h1> 2022 Prands Runway</h1>
+        {% for x in post.all %}
+               <a href="{{x.url}}}" class="fancylight popup-btn" data-fancybox-group="light" target="_blank"> 
+               <img class="img-fluid" src="{{x.img.url}}" alt="" height="300" width="300">
+               </a>
+            {% endfor %}
+        
+    </body>
+</html>
+{% endblock %}

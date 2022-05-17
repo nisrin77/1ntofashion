@@ -1,0 +1,125 @@
+{% extends 'base.html'%}
+{% load static%}
+ {% block content %}
+
+ <html >
+ <head>
+ <title>contact us</title>
+ <style>
+	
+
+     .aside{width: 220px;
+         float: left;
+         height: 100%;
+         padding: 0px 20px 60px 20px;
+		 height:40%;
+		  width: 55%;}
+
+
+	.p{
+	float: left;
+	width: 100px;
+	color: #F072A9;
+	font-weight: bold;
+	font-size: 20px;
+	text-shadow: 1px 1px 1px #fff;
+	padding-top: 10px; 
+}
+
+input[type=text]{
+	border-bottom: 2px solid palevioletred ;
+	border-top: 0px;
+	border-left: 0px ;
+	border-right: 0px;
+	width: 300px;
+	outline: none;
+	color: #F072A9;
+}
+
+input[type=submit]{
+	background: #EB3B88;
+	border: 1px solid #C94A81;
+	padding: 5px 15px 5px 15px;
+	color: #FFCBE2;
+	box-shadow: inset -1px -1px 3px #FF62A7;
+	-moz-box-shadow: inset -1px -1px 3px #FF62A7;
+	-webkit-box-shadow: inset -1px -1px 3px #FF62A7;
+	border-radius: 3px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;	
+	font-weight: bold;
+}
+
+input[type=submit]:hover{color:white;}
+
+textarea{
+	border-bottom: 2px solid palevioletred ;
+	border-top: 0px;
+	border-left: 0px ;
+	border-right: 0px;
+	width: 300px;
+  height: 150px;
+  outline: none;
+	color: #F072A9;
+}
+
+h1{
+font-family: "Copperplate", "Courier New", monospace;}
+
+.coloumn{
+	font-family: "Copperplate", "Courier New", monospace;
+	padding-top: 10px;
+}
+   
+ </style>
+ </head>
+ <body>
+	<div class="bg-light">
+		<div class="bg-light">
+			<div class="container py-5">
+			  <div class="row h-100 align-items-center py-5">
+				<div class="col-lg-6">
+					<h1>Get in touch with us</h1>
+					<form  method="post" action=" {% url 'contactus' %} ">
+						{% csrf_token %} <!-- prevent hackers -->
+
+				  <label for="field1"><p class="display-4 p"> Name </p> 
+					<br/>
+                   <input name="field1" type="text"   class="input-field" placeholder="Amal " value=""></label>
+		            <br/>
+					<label for="field1"><p class="p">Email</p>
+						<br/>
+						<input name="field2" type="text"   class="input-field" placeholder="example@eexample.com" value=""></label>
+						<br/>
+						<br/>
+			   
+						<label for="field3"> <p class="p">Message </p>
+						<br/>
+						<textarea name="field3"  id="cMessage" class="text" placeholder="Message Content" ></textarea></label>
+						 <br/>  <br/>
+						<input type="submit" value="submit" name="submit" id="button">
+
+					</form> <!-- end form -->
+				  </p>
+				</div>
+				<div class="col-lg-6 d-none d-lg-block"><img src="{% static 'pages\imgs\VERSACE SS21_ADV.png'%}" alt="" class="img-fluid"></div>
+			  </div>
+			</div>
+		  </div>
+
+                            <div class="bg-light py-5">
+										<div class=" coloumn">
+                                    <h4><b> Contact Info</b></h4>
+                                    <p>
+                                    Nisreenalansrii@gmail.com<br>
+                                    Phone: (+966) 54 500 7824
+                                    </p> 
+                                </div>
+								</div>
+							
+								
+ </body>
+ 
+ </html>
+ {% endblock %}
