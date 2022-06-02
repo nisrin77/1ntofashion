@@ -17,6 +17,7 @@ import os
 import django_heroku
 
 import dj_database_url
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -30,7 +31,7 @@ SECRET_KEY = 'django-insecure-0m=#1=-&h9-=bwn^_afjnv^=5afg*622us9jeer&p!42o_8oec
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['Intofashion.com']
+ALLOWED_HOSTS = ['nisrin77.pythonanywhere.com','localhost']
 
 
 # Application definition
@@ -87,7 +88,7 @@ WSGI_APPLICATION = 'nisrin.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME':str(BASE_DIR / 'db.sqlite3'),
     }
 }
 
@@ -145,4 +146,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+#activate django heroku
 django_heroku.settings(locals())
